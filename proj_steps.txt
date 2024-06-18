@@ -1,0 +1,28 @@
+1.npm init -y
+2.npm install --save-dev typescript
+3. npx tsc --init
+4. modify tsconfig file to->
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,  
+    "strict": true,
+    "skipLibCheck": true
+  }
+}
+5. npm install express
+6. npm install --save-dev @types/express @types/node
+
+(Optional) Install the touch-cli globally using npm to create files quickly from the command line
+npm install touch-cli -g 
+
+"scripts": {
+  "start": "node dist/server.js",
+  "build": "tsc"
+},
+The "start" script starts the server using the compiled JavaScript file in the 'dist' directory.
+The "build" script builds the TypeScript files to JavaScript using the TypeScript compiler.
